@@ -1,5 +1,8 @@
+from tokenize import tokenize
+
 forward_map = {}
 reverse_map = {}
+tokenised_text = []
 n = 0
 
 
@@ -20,3 +23,21 @@ def mapping():
 def reverse_mapping():
     global reverse_map
     reverse_map = {v: k for k, v in forward_map.items()}
+
+
+def tokenise():
+    global tokenised_text
+    with open("input.txt", "r") as i:
+        while True:
+            char = i.read(1)
+            if not char:
+                break
+            tokenised_text.append(forward_map[char])
+
+
+mapping()
+reverse_mapping()
+print(n)
+tokenise()
+# print(tokenised_text)
+print(len(tokenised_text))
