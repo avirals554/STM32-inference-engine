@@ -11,10 +11,10 @@ No frameworks on the microcontroller. No OS. No malloc. Just math.
 An LLM is just weights and a dictionary. That's it. The "intelligence" is
 matrix multiplication applied to numbers that came out of training.
 
-This project asks a simple question — if the math is that simple, can we
-run it on the cheapest, smallest hardware we can find? Not because a
-microcontroller needs AI, but because if it *can* run inference, then
-the underlying math really is as simple as we claim.
+so the question is  if the math is that simple, can we
+run it on the cheapest, smallest hardware we can find? i dont mean that every
+microcontroller that we find in fridges needs AI, but because if it *can* run inference as an experiment ?, is 
+the underlying math really is as simple as we claim ? 
 
 The chip does inference only. Training happens on my Mac. The inference
 engine on the chip is written from scratch in C — no libraries, no
@@ -128,7 +128,7 @@ the text.
 ```
 STM32-inference-engine/
     train.py       ← training pipeline (tokenization, batching, embeddings)
-    input.txt      ← training data (tiny shakespeare)
+    input.txt      ← training data (tiny shakespeare)---> this is just for the first iteration that is done right now we will hopefully change it 
     README.md
 ```
 
@@ -191,3 +191,5 @@ reasoning behind every decision:
 ---
 
 *No abstractions. No frameworks. Just weights on a chip.*
+
+~STS
