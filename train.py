@@ -1,5 +1,11 @@
+# references - github.com/avirals554/STM32-inference-engines
+# important facts that needs to be remembered for checking the code and doing stuff -
+# the size of the dictionary is - 65--forward_map
+# the size of the training dataset- 1003854
+# the size of the testing dataset-111540
+
 import torch
-from torch.onnx import TrainingMode
+import torch.nn as nn
 
 training_data = []
 testing_data = []
@@ -10,6 +16,10 @@ n = 0
 
 # these are the simple functions that are used so i am declaring them here and at the bottom they would be called accordingly to their use case .
 # and also the functions can be added this way right ?
+
+
+def make_embeddings():
+    embedding = nn.Embedding(65, 64)
 
 
 def get_batch():
@@ -79,10 +89,8 @@ tokenise_local()
 # after the data is ready we are gonna use the torch library finally and then print the data
 # this step is important cause now we can actually do stuff with the data , in python to perform any action we must iterate the entire list and then do stuff with it but pytorch is
 # is just annoyingly useful in this case .
-#
+print(forward_map)
 data = torch.tensor(tokenised_text)
 split_point = int(0.9 * (len(data)))
 training_data = data[:split_point]
 testing_data = data[split_point:]
-print(len(training_data))
-print(len(testing_data))
