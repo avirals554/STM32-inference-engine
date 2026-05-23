@@ -13,7 +13,7 @@ matrix multiplication applied to numbers that came out of training.
 
 so the question is  if the math is that simple, can we
 run it on the cheapest, smallest hardware we can find? i dont mean that every
-microcontroller that we find in fridges needs AI, but because if it *can* run inference as an experiment ?, is 
+microcontroller that we find in fridges needs AI, but because *can* it run inference as an experiment ?, is 
 the underlying math really is as simple as we claim ? 
 
 The chip does inference only. Training happens on my Mac. The inference
