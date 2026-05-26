@@ -6,6 +6,7 @@
 
 import torch
 import torch.nn as nn
+from torch.special import softmax
 
 training_data = []
 testing_data = []
@@ -33,6 +34,7 @@ class TinyTransformer(nn.Module):
         self.query = nn.Linear(64, 64)
         self.key = nn.Linear(64, 64)
         self.value = nn.Linear(64, 64)
+        self.mask = torch.tril(torch.ones(64, 64))
 
     def forward(self, x):
         # your math goes here
@@ -40,8 +42,13 @@ class TinyTransformer(nn.Module):
         Q = self.query(x)
         K = self.key(x)
         V = self.value(x)
+        A = (Q @ K.transpose(-2, -1)) / 64**0.5
 
-        return x
+        A = A.masked_fill(self.mask == 0, float("-inf"))
+        At = A.softmax(dim=-1)
+        # the -1 this is just to tell the
+        output = At @ V
+        return output
 
 
 def get_batch():
