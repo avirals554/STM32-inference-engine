@@ -57,6 +57,8 @@ class TinyTransformer(nn.Module):
         # the -1 this is just to tell the
         output = At @ V
         # this is where the attention ends and we start with the feed forward thing that will give us the predictions
+        # added another form of normalization bellow to improve accuracy the first time the loss function reached 1.8 max now after adding the
+        # bellow line it reached to like 1.5 something
         x = x + output
         x = self.norm1(x)
 

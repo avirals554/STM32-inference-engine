@@ -13,8 +13,8 @@ matrix multiplication applied to numbers that came out of training.
 
 so the question is  if the math is that simple, can we
 run it on the cheapest, smallest hardware we can find? i dont mean that every
-microcontroller that we find in fridges needs AI, but because *can* it run inference as an experiment ?, is 
-the underlying math really is as simple as we claim ? 
+microcontroller that we find in fridges needs AI, but because *can* it run inference as an experiment ?, is
+the underlying math really is as simple as we claim ?
 
 The chip does inference only. Training happens on my Mac. The inference
 engine on the chip is written from scratch in C — no libraries, no
@@ -41,14 +41,14 @@ useful computation. That's it. No deeper reason.
 
 The idea is character-level prediction, not word-level. Why? Because
 word-level needs a vocabulary of tens of thousands of tokens and way
-more memory than 128KB allows. Characters? There's only about 80 of
-them. That fits.
+more memory than 128KB allows. Characters? There's only 65 unique ones
+in the training data. That fits.
 
 ```
 Training (laptop)                    Inference (STM32)
        |                                    |
        | 1. build character dictionary      | 1. load weights from flash
-       |    A→0, B→1, C→2, ... (~80 chars)  | 2. load dictionary
+       |    A→0, B→1, C→2, ... (65 chars)   | 2. load dictionary
        | 2. tokenize text (tiny shakespeare) | 3. take input characters
        | 3. create embeddings (64-dim)       | 4. matrix multiply (int8)
        | 4. train with self-attention        | 5. predict next character
@@ -64,7 +64,7 @@ A word-level model like GPT needs a vocabulary of 50,000+ tokens.
 Each token needs an embedding vector. That's millions of parameters
 before you even get to the attention layers.
 
-A character-level model needs ~80 tokens. The entire dictionary fits
+A character-level model needs 65 tokens. The entire dictionary fits
 in a few hundred bytes. The embeddings fit in kilobytes. The trade-off
 is that the model has to learn spelling and word structure from scratch,
 but that's the whole point — we want the smallest possible thing that
@@ -72,27 +72,86 @@ can still predict what comes next.
 
 ---
 
-## Training
+## The Model
 
-Training data: [Tiny Shakespeare](https://raw.githubusercontent.com/karpathy/char-rnn/master/data/tinyshakespeare/input.txt)
-(~1MB of Shakespeare's plays as raw text)
+The model is a single-layer transformer called `TinyTransformer`. Everything
+is sized to be as small as possible while still learning something real.
+
+```
+Input (batch of 64-char sequences)
+    |
+    v
+Character Embedding ──── nn.Embedding(65, 64)   65 chars → 64-dim vectors
+    +
+Positional Embedding ─── nn.Embedding(64, 64)   position 0-63 → 64-dim vectors
+    |
+    v
+Self-Attention
+    | Q = Linear(64→64)
+    | K = Linear(64→64)
+    | V = Linear(64→64)
+    | A = (Q @ Kᵀ) / √64
+    | A = masked_fill(causal mask)    ← can't look at future characters
+    | A = softmax(A)
+    | output = A @ V
+    |
+    v
+Add + LayerNorm ──────── residual connection
+    |
+    v
+Feed-Forward
+    | Linear(64→128) → ReLU → Linear(128→64)
+    |
+    v
+Add + LayerNorm ──────── residual connection
+    |
+    v
+Output Head ──────────── Linear(64→65)   → probability over 65 characters
+```
+
+### Why these numbers
+
+| Parameter | Value | Why |
+| --- | --- | --- |
+| vocab size | 65 | unique characters found in tiny shakespeare |
+| embedding dim | 64 | small enough for the STM32, big enough to encode patterns |
+| context window | 64 | 64 characters of history to predict the next one |
+| feed-forward hidden | 128 | 2x embedding dim, standard ratio |
+| attention heads | 1 | single head — simplest possible attention |
+| layers | 1 | single transformer block — we want this tiny |
+| batch size | 32 | 32 random windows per training step |
+
+### Training
+
+- **Optimizer**: Adam, learning rate 0.001
+- **Loss**: CrossEntropyLoss
+- **Steps**: 50,000
+- **Data**: Tiny Shakespeare (~1MB, 1,003,854 training chars, 111,540 testing chars)
 
 ```
 curl -o input.txt https://raw.githubusercontent.com/karpathy/char-rnn/master/data/tinyshakespeare/input.txt
 ```
 
-The training pipeline so far:
+The training loop prints loss every 500 steps. After training, the model
+generates 200 characters autoregressively — feeding each predicted character
+back as input to predict the next one.
+
+Weights are saved to `model_weights_1.pth`.
+
+---
+
+## Training Pipeline
 
 **1. Character mapping**
 
 Read the entire text file character by character. Every new character
-gets an integer ID. Result: a dictionary of ~80 entries.
+gets an integer ID. Result: a dictionary of 65 entries.
 
 ```
-A → 0
-B → 1
-C → 2
+' ' → 0
+'!' → 1
 ...
+'z' → 64
 ```
 
 **2. Tokenization**
@@ -102,7 +161,7 @@ text becomes a list of numbers.
 
 **3. Train/test split**
 
-90% training, 10% testing. Standard split.
+90% training (1,003,854 chars), 10% testing (111,540 chars).
 
 **4. Batching**
 
@@ -121,14 +180,29 @@ input:  [2.....65]     target: [3.....66]
 the model should learn language patterns, not memorize the order of
 the text.
 
+**5. Forward pass + self-attention**
+
+Each batch goes through the transformer — embeddings, attention, feed-forward,
+output head. The causal mask makes sure position N can only attend to positions
+0 through N, never the future. This is what makes it a language model and not
+just pattern matching.
+
+**6. Generation**
+
+Start with a blank context (64 zeros). Run it through the model, get a
+probability distribution over 65 characters, sample one, append it to
+the context, shift the window, repeat. 200 characters come out.
+
 ---
 
 ## Code Structure
 
 ```
 STM32-inference-engine/
-    train.py       ← training pipeline (tokenization, batching, embeddings)
-    input.txt      ← training data (tiny shakespeare)---> this is just for the first iteration that is done right now we will hopefully change it 
+    train.py              ← full pipeline: tokenization, model, training, generation
+    input.txt             ← training data (tiny shakespeare, first iteration)
+    model_weights_1.pth   ← saved model weights after 50k steps
+    .gitignore
     README.md
 ```
 
@@ -140,17 +214,21 @@ How far along is this project?
 
 ```
 Training pipeline (Python/PyTorch on laptop)
-  [x] character dictionary        map every unique char to an integer
+  [x] character dictionary        map every unique char to an integer (65 chars)
   [x] reverse dictionary          map integers back to characters
   [x] tokenization                convert full text to integer sequence
-  [x] train/test split            90/10 split
+  [x] train/test split            90/10 split (1,003,854 / 111,540)
   [x] batching                    random 64-char windows, batch size 32
-  [ ] embedding layer             64-dimensional vectors per character
-  [ ] positional encoding         so the model knows character order
-  [ ] self-attention              the actual "learning" mechanism
-  [ ] training loop               forward pass, loss, backprop
+  [x] embedding layer             65 chars → 64-dimensional vectors
+  [x] positional encoding         64 positions → 64-dimensional vectors
+  [x] self-attention              Q/K/V with causal mask, single head
+  [x] feed-forward network        64→128→64 with ReLU
+  [x] layer normalization         two LayerNorms with residual connections
+  [x] training loop               50k steps, Adam, lr=0.001, CrossEntropyLoss
+  [x] text generation             200 chars, autoregressive sampling
+  [x] weight saving               model_weights_1.pth
   [ ] quantization                float32 → int8 for microcontroller
-  [ ] weight export               dump weights + dict to binary files
+  [ ] weight export               dump weights + dict to C-compatible binary
 
 Inference engine (C on STM32)
   [ ] weight loader               read weights from flash into SRAM
@@ -173,11 +251,18 @@ Hardware
 ## What I've Learned So Far
 
 - An LLM is just a dictionary + weights + matrix multiplication — no magic
-- Character-level models have ~80 tokens vs 50,000+ for word-level — massive memory savings
+- Character-level models have 65 tokens vs 50,000+ for word-level — massive memory savings
 - `torch.randint` for random batch positions prevents the model from memorizing text order
 - `torch.stack` joins 1D tensors into a 2D batch tensor — needed because Python lists don't auto-stack
 - 90/10 train/test split is the standard starting point
 - The training data doesn't need to be huge — tiny shakespeare is ~1MB and that's enough to learn English character patterns
+- The causal mask (`torch.tril`) is what makes a transformer a *language model* — without it, every position can see the future and there's nothing to predict
+- Self-attention is just three matrix multiplications (Q, K, V) and a weighted sum — the "attention" name makes it sound more mysterious than it is
+- `masked_fill` with `-inf` before softmax is how you zero out future positions — softmax turns `-inf` into 0 probability
+- Residual connections (`x = x + output`) prevent the gradient from dying in deeper networks — the original signal always has a shortcut path
+- LayerNorm stabilizes training by keeping activations from exploding or vanishing
+- The generate function is embarrassingly simple — run the model, sample a character, shift the window, repeat
+- `torch.save(model.state_dict())` saves just the learned weights, not the model code — you need the class definition to load them back
 
 ---
 
