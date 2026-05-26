@@ -29,7 +29,7 @@ n = 0
 class TinyTransformer(nn.Module):
     def __init__(self):
         super().__init__()
-        # your layers go here
+        # setting the constructor for the initial values that we are every gonna need for the training of the data
         self.char_embedding = nn.Embedding(65, 64)
         self.pos_embedding = nn.Embedding(64, 64)
         self.query = nn.Linear(64, 64)
@@ -39,10 +39,14 @@ class TinyTransformer(nn.Module):
         self.ff1 = nn.Linear(64, 128)
         self.ff2 = nn.Linear(128, 64)
         self.output_head = nn.Linear(64, 65)
+        self.norm1 = nn.LayerNorm(64)
+        self.norm2 = nn.LayerNorm(64)
 
     def forward(self, x):
-        # your math goes here
+        # feed forward function
         x = self.char_embedding(x) + self.pos_embedding(torch.arange(64))
+        # this is the start of the attention stuff i am writting this as a way to seperate the code in section inside a functions
+        #
         Q = self.query(x)
         K = self.key(x)
         V = self.value(x)
@@ -52,12 +56,18 @@ class TinyTransformer(nn.Module):
         At = A.softmax(dim=-1)
         # the -1 this is just to tell the
         output = At @ V
+        # this is where the attention ends and we start with the feed forward thing that will give us the predictions
+        x = x + output
+        x = self.norm1(x)
 
-        output = self.ff1(output)
+        output = self.ff1(x)
         output = torch.relu(output)
         output = self.ff2(output)
-        output = self.output_head(output)
-        return output
+
+        x = x + output  # ← merge back into main flow
+        x = self.norm2(x)
+        x = self.output_head(x)
+        return x
 
 
 def get_batch():
@@ -132,3 +142,37 @@ data = torch.tensor(tokenised_text)
 split_point = int(0.9 * (len(data)))
 training_data = data[:split_point]
 testing_data = data[split_point:]
+
+# this is the part for the declaration of the model or the tiny transformer
+model = TinyTransformer()
+loss_fn = nn.CrossEntropyLoss()
+optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
+for step in range(50000):
+    # calling the function that we made for the getting the set of the inputs and the outputs
+    inputs, targets = get_batch()
+
+    predictions = model(inputs)
+    predictions = predictions.view(-1, 65)
+    targets = targets.view(-1)
+    loss = loss_fn(predictions, targets)
+    optimizer.zero_grad()
+    loss.backward()
+    optimizer.step()
+    if step % 500 == 0:
+        print(f"step {step}, loss: {loss.item():.4f}")
+
+
+def generate(model, max_chars=200):
+    context = torch.zeros(1, 64, dtype=torch.long)
+    result = []
+    for i in range(max_chars):
+        output = model(context)
+        probs = torch.softmax(output[0, -1], dim=0)
+        next_char = torch.multinomial(probs, 1).item()
+        result.append(reverse_map[next_char])
+        context = torch.cat([context[:, 1:], torch.tensor([[next_char]])], dim=1)
+    print("".join(result))
+
+
+generate(model)
+torch.save(model.state_dict(), "model_weights_1.pth")
