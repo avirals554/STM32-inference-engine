@@ -23,6 +23,7 @@ n = 0
 # does "mapping " actually useful ? are are we just doing stuff that is not needed at all ? i mean we can just create a list of 65 character embeddings
 # and then we are just gonna search it through the embeddings so if lets say that we have the id of 1 for 'A' in the dictionary why not just use it
 # as a concept in the embedding dictionary too ? without physically mapping it .
+# ok so we are gonna create this so that
 
 
 class TinyTransformer(nn.Module):
@@ -35,6 +36,9 @@ class TinyTransformer(nn.Module):
         self.key = nn.Linear(64, 64)
         self.value = nn.Linear(64, 64)
         self.mask = torch.tril(torch.ones(64, 64))
+        self.ff1 = nn.Linear(64, 128)
+        self.ff2 = nn.Linear(128, 64)
+        self.output_head = nn.Linear(64, 65)
 
     def forward(self, x):
         # your math goes here
@@ -48,6 +52,11 @@ class TinyTransformer(nn.Module):
         At = A.softmax(dim=-1)
         # the -1 this is just to tell the
         output = At @ V
+
+        output = self.ff1(output)
+        output = torch.relu(output)
+        output = self.ff2(output)
+        output = self.output_head(output)
         return output
 
 
