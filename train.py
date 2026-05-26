@@ -18,8 +18,30 @@ n = 0
 # and also the functions can be added this way right ?
 
 
-def make_embeddings():
-    embedding = nn.Embedding(65, 64)
+# this is a simple function that creates an array of embeddings that are 65 in number, i am not using the input stuff at all cause i am thinking the following-
+# does "mapping " actually useful ? are are we just doing stuff that is not needed at all ? i mean we can just create a list of 65 character embeddings
+# and then we are just gonna search it through the embeddings so if lets say that we have the id of 1 for 'A' in the dictionary why not just use it
+# as a concept in the embedding dictionary too ? without physically mapping it .
+
+
+class TinyTransformer(nn.Module):
+    def __init__(self):
+        super().__init__()
+        # your layers go here
+        self.char_embedding = nn.Embedding(65, 64)
+        self.pos_embedding = nn.Embedding(64, 64)
+        self.query = nn.Linear(64, 64)
+        self.key = nn.Linear(64, 64)
+        self.value = nn.Linear(64, 64)
+
+    def forward(self, x):
+        # your math goes here
+        x = self.char_embedding(x) + self.pos_embedding(torch.arange(64))
+        Q = self.query(x)
+        K = self.key(x)
+        V = self.value(x)
+
+        return x
 
 
 def get_batch():
