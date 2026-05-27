@@ -41,6 +41,7 @@ class TinyTransformer(nn.Module):
         self.output_head = nn.Linear(64, 65)
         self.norm1 = nn.LayerNorm(64)
         self.norm2 = nn.LayerNorm(64)
+        self.out_proj = nn.Linear(64, 64)
 
     def forward(self, x):
         # feed forward function
@@ -48,14 +49,22 @@ class TinyTransformer(nn.Module):
         # this is the start of the attention stuff i am writting this as a way to seperate the code in section inside a functions
         #
         Q = self.query(x)
+        Q = Q.view(32, 64, 2, 32)
+        Q = Q.transpose(1, 2)
         K = self.key(x)
+        K = K.view(32, 64, 2, 32)
+        K = K.transpose(1, 2)
         V = self.value(x)
-        A = (Q @ K.transpose(-2, -1)) / 64**0.5
+        V = V.view(32, 64, 2, 32)
+        V = V.transpose(1, 2)
+        A = (Q @ K.transpose(-2, -1)) / 32**0.5
 
         A = A.masked_fill(self.mask == 0, float("-inf"))
         At = A.softmax(dim=-1)
         # the -1 this is just to tell the
         output = At @ V
+        output = output.transpose(1, 2).contiguous().view(32, 64, 64)
+        output = self.out_proj(output)
         # this is where the attention ends and we start with the feed forward thing that will give us the predictions
         # added another form of normalization bellow to improve accuracy the first time the loss function reached 1.8 max now after adding the
         # bellow line it reached to like 1.5 something
