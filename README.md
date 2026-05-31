@@ -269,7 +269,8 @@ Hardware
 ## Blogs
 
 I'm documenting the full journey on Medium with more context, tangents, and the
-reasoning behind every decision:
+reasoning behind every decision and the stuff that i have learned in the way they are the collection of all the things that i have realised in this 
+project :
 
 [What Happens When You Force 512KB to Think?](https://medium.com/@avirals554)
 
