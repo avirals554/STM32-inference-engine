@@ -268,7 +268,7 @@ Hardware
 
 ## Blogs
 
-I'm documenting the full journey on Medium with more context, tangents, and the
+I'm documenting the full journey on  with more context, tangents, and the
 reasoning behind every decision and the stuff that i have learned in the way they are the collection of all the things that i have realised in this 
 project :
 
