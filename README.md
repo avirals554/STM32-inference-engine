@@ -266,12 +266,14 @@ Hardware
 
 ---
 
-## Blog
+## Blogs
 
 I'm documenting the full journey on Medium with more context, tangents, and the
 reasoning behind every decision:
 
 [What Happens When You Force 512KB to Think?](https://medium.com/@avirals554)
+[Time When More Layers Meant Worse Model ... Birth Of Residual](https://dev.to/avirals554/time-when-more-layers-meant-worse-model-birth-of-residual-26f6)
+
 
 ---
 
