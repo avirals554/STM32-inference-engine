@@ -74,8 +74,9 @@ can still predict what comes next.
 
 ## The Model
 
-The model is a single-layer transformer called `TinyTransformer`. Everything
-is sized to be as small as possible while still learning something real.
+The model is a two-layer transformer called `TinyTransformer`, each layer using
+2-head self-attention. Everything is sized to be as small as possible while
+still learning something real.
 
 ```
 Input (batch of 64-char sequences)
@@ -86,14 +87,15 @@ Character Embedding ──── nn.Embedding(65, 64)   65 chars → 64-dim vect
 Positional Embedding ─── nn.Embedding(64, 64)   position 0-63 → 64-dim vectors
     |
     v
-Self-Attention
-    | Q = Linear(64→64)
-    | K = Linear(64→64)
-    | V = Linear(64→64)
-    | A = (Q @ Kᵀ) / √64
+LAYER 1
+Self-Attention (2 heads)
+    | Q = Linear(64→64) → reshape into 2 heads of 32
+    | K = Linear(64→64) → reshape into 2 heads of 32
+    | V = Linear(64→64) → reshape into 2 heads of 32
+    | A = (Q @ Kᵀ) / √32
     | A = masked_fill(causal mask)    ← can't look at future characters
     | A = softmax(A)
-    | output = A @ V
+    | output = A @ V → merge heads back → out_proj
     |
     v
 Add + LayerNorm ──────── residual connection
@@ -104,6 +106,9 @@ Feed-Forward
     |
     v
 Add + LayerNorm ──────── residual connection
+    |
+    v
+LAYER 2 ──────────────── same structure as Layer 1, with its own weights
     |
     v
 Output Head ──────────── Linear(64→65)   → probability over 65 characters
@@ -117,8 +122,8 @@ Output Head ──────────── Linear(64→65)   → probabili
 | embedding dim | 64 | small enough for the STM32, big enough to encode patterns |
 | context window | 64 | 64 characters of history to predict the next one |
 | feed-forward hidden | 128 | 2x embedding dim, standard ratio |
-| attention heads | 1 | single head — simplest possible attention |
-| layers | 1 | single transformer block — we want this tiny |
+| attention heads | 2 | the 64 dims split into 2 heads of 32 each |
+| layers | 2 | two transformer blocks stacked — layer 2 refines what layer 1 found |
 | batch size | 32 | 32 random windows per training step |
 
 ### Training
@@ -137,6 +142,10 @@ generates 200 characters autoregressively — feeding each predicted character
 back as input to predict the next one.
 
 Weights are saved to `model_weights_1.pth`.
+
+Loss dropped from ~1.5 to ~1.3 after adding multi-head attention and stacking
+the second layer. Multi-head on its own barely moved it — the second layer is
+what made the difference.
 
 ---
 
@@ -202,6 +211,10 @@ STM32-inference-engine/
     train.py              ← full pipeline: tokenization, model, training, generation
     input.txt             ← training data (tiny shakespeare, first iteration)
     model_weights_1.pth   ← saved model weights after 50k steps
+    stm32stuff/           ← the bare-metal C side (scaffolding for now, empty)
+        main.c            ← inference engine entry point
+        startup.c         ← startup code, runs before main
+        linker.ld         ← linker script, memory layout for the chip
     .gitignore
     README.md
 ```
@@ -221,7 +234,8 @@ Training pipeline (Python/PyTorch on laptop)
   [x] batching                    random 64-char windows, batch size 32
   [x] embedding layer             65 chars → 64-dimensional vectors
   [x] positional encoding         64 positions → 64-dimensional vectors
-  [x] self-attention              Q/K/V with causal mask, single head
+  [x] self-attention              Q/K/V with causal mask, 2 heads
+  [x] second layer                a second transformer block, its own weights
   [x] feed-forward network        64→128→64 with ReLU
   [x] layer normalization         two LayerNorms with residual connections
   [x] training loop               50k steps, Adam, lr=0.001, CrossEntropyLoss
@@ -261,6 +275,7 @@ Hardware
 - `masked_fill` with `-inf` before softmax is how you zero out future positions — softmax turns `-inf` into 0 probability
 - Residual connections (`x = x + output`) prevent the gradient from dying in deeper networks — the original signal always has a shortcut path
 - LayerNorm stabilizes training by keeping activations from exploding or vanishing
+- Multi-head attention by itself barely dropped the loss — stacking a second transformer layer is what took it from ~1.5 to ~1.3
 - The generate function is embarrassingly simple — run the model, sample a character, shift the window, repeat
 - `torch.save(model.state_dict())` saves just the learned weights, not the model code — you need the class definition to load them back
 
