@@ -15,6 +15,7 @@ reverse_map = {}
 tokenised_text = []
 n = 0
 
+
 # these are the simple functions that are used so i am declaring them here and at the bottom they would be called accordingly to their use case .
 # and also the functions can be added this way right ?
 
@@ -36,7 +37,10 @@ class TinyTransformer(nn.Module):
         self.key = nn.Linear(64, 64)
         self.value = nn.Linear(64, 64)
         self.mask = torch.tril(torch.ones(64, 64))
+        # these are for changing the dimentions we are doing this to enlarge the matrix as to make it of higher resolution so as to make the
+        # data and weights more refined
         self.ff1 = nn.Linear(64, 128)
+        # this is to join them back again
         self.ff2 = nn.Linear(128, 64)
         self.output_head = nn.Linear(64, 65)
         self.norm1 = nn.LayerNorm(64)
@@ -45,17 +49,21 @@ class TinyTransformer(nn.Module):
 
     def forward(self, x):
         # feed forward function
+        B = x.shape[
+            0
+        ]  # getting the dimentions of the 2d array that we are getting and then using it as an input for the
+        # next step of the code .
         x = self.char_embedding(x) + self.pos_embedding(torch.arange(64))
         # this is the start of the attention stuff i am writting this as a way to seperate the code in section inside a functions
         #
         Q = self.query(x)
-        Q = Q.view(32, 64, 2, 32)
+        Q = Q.view(B, 64, 2, 32)
         Q = Q.transpose(1, 2)
         K = self.key(x)
-        K = K.view(32, 64, 2, 32)
+        K = K.view(B, 64, 2, 32)
         K = K.transpose(1, 2)
         V = self.value(x)
-        V = V.view(32, 64, 2, 32)
+        V = V.view(B, 64, 2, 32)
         V = V.transpose(1, 2)
         A = (Q @ K.transpose(-2, -1)) / 32**0.5
 
@@ -63,11 +71,8 @@ class TinyTransformer(nn.Module):
         At = A.softmax(dim=-1)
         # the -1 this is just to tell the
         output = At @ V
-        output = output.transpose(1, 2).contiguous().view(32, 64, 64)
+        output = output.transpose(1, 2).contiguous().view(B, 64, 64)
         output = self.out_proj(output)
-        # this is where the attention ends and we start with the feed forward thing that will give us the predictions
-        # added another form of normalization bellow to improve accuracy the first time the loss function reached 1.8 max now after adding the
-        # bellow line it reached to like 1.5 something
         x = x + output
         x = self.norm1(x)
 
@@ -173,11 +178,18 @@ for step in range(50000):
         print(f"step {step}, loss: {loss.item():.4f}")
 
 
+# ok lets take a look at this function and see what it does alright ?
+#
 def generate(model, max_chars=200):
-    context = torch.zeros(1, 64, dtype=torch.long)
+    context = torch.zeros(
+        1, 64, dtype=torch.long
+    )  # so the torch.zeros create a tensor that is filled with the scalar 0
+    # in this there would be the integer of 0 in each of the cloumn and rows of the tensor
     result = []
     for i in range(max_chars):
         output = model(context)
+        # if the weights are some random data that we change to move closer to the truth then
+        # why did we initialize it to 0?
         probs = torch.softmax(output[0, -1], dim=0)
         next_char = torch.multinomial(probs, 1).item()
         result.append(reverse_map[next_char])
