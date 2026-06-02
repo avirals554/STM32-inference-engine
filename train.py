@@ -46,6 +46,15 @@ class TinyTransformer(nn.Module):
         self.norm1 = nn.LayerNorm(64)
         self.norm2 = nn.LayerNorm(64)
         self.out_proj = nn.Linear(64, 64)
+        # this here i am adding the variables for the 2nd attention block for lower loss function ...
+        self.query2 = nn.Linear(64, 64)
+        self.key2 = nn.Linear(64, 64)
+        self.value2 = nn.Linear(64, 64)
+        self.out_proj2 = nn.Linear(64, 64)
+        self.ff1_2 = nn.Linear(64, 128)
+        self.ff2_2 = nn.Linear(128, 64)
+        self.norm3 = nn.LayerNorm(64)
+        self.norm4 = nn.LayerNorm(64)
 
     def forward(self, x):
         # feed forward function
@@ -54,34 +63,62 @@ class TinyTransformer(nn.Module):
         ]  # getting the dimentions of the 2d array that we are getting and then using it as an input for the
         # next step of the code .
         x = self.char_embedding(x) + self.pos_embedding(torch.arange(64))
-        # this is the start of the attention stuff i am writting this as a way to seperate the code in section inside a functions
-        #
-        Q = self.query(x)
-        Q = Q.view(B, 64, 2, 32)
-        Q = Q.transpose(1, 2)
-        K = self.key(x)
-        K = K.view(B, 64, 2, 32)
-        K = K.transpose(1, 2)
-        V = self.value(x)
-        V = V.view(B, 64, 2, 32)
-        V = V.transpose(1, 2)
-        A = (Q @ K.transpose(-2, -1)) / 32**0.5
 
+        # ===== LAYER 1 =====
+        # this is the start of the attention stuff i am writting this as a way to seperate the code in section inside a functions
+        Q = self.query(x)
+        Q = Q.view(B, 64, 2, 32).transpose(1, 2)
+        K = self.key(x)
+        K = K.view(B, 64, 2, 32).transpose(1, 2)
+        V = self.value(x)
+        V = V.view(B, 64, 2, 32).transpose(1, 2)
+        A = (Q @ K.transpose(-2, -1)) / 32**0.5
         A = A.masked_fill(self.mask == 0, float("-inf"))
-        At = A.softmax(dim=-1)
-        # the -1 this is just to tell the
+        At = A.softmax(dim=-1)  # the -1 is to apply softmax across each row
         output = At @ V
+        # joining the 2 heads back together into one 64 wide vector
         output = output.transpose(1, 2).contiguous().view(B, 64, 64)
-        output = self.out_proj(output)
+        output = self.out_proj(output)  # mixes the 2 heads info together
+        # this is where the attention ends and we start with the feed forward thing
+        # added the normalization + residual below to improve accuracy. loss dropped a lot after this
         x = x + output
         x = self.norm1(x)
 
-        output = self.ff1(x)
+        output = self.ff1(x)  # enlarge to 128 for higher resolution / refined data
         output = torch.relu(output)
-        output = self.ff2(output)
+        output = self.ff2(output)  # join them back to 64
 
         x = x + output  # ← merge back into main flow
         x = self.norm2(x)
+
+        # ===== LAYER 2 =====
+        # this is the 2nd attention block, it works on what layer 1 already figured out
+        # the data (context matrix) flows from layer 1 into here, layer 2 has its OWN weights
+        Q2 = self.query2(x)
+        Q2 = Q2.view(B, 64, 2, 32).transpose(1, 2)
+        K2 = self.key2(x)
+        K2 = K2.view(B, 64, 2, 32).transpose(1, 2)
+        V2 = self.value2(x)
+        V2 = V2.view(B, 64, 2, 32).transpose(1, 2)
+        A2 = (Q2 @ K2.transpose(-2, -1)) / 32**0.5
+        A2 = A2.masked_fill(self.mask == 0, float("-inf"))
+        At2 = A2.softmax(dim=-1)  # the -1 is to apply softmax across each row
+        output2 = At2 @ V2
+        # joining the 2 heads back together again for layer 2
+        output2 = output2.transpose(1, 2).contiguous().view(B, 64, 64)
+        output2 = self.out_proj2(output2)  # mixes the 2 heads info together
+        x = x + output2
+        x = self.norm3(x)
+
+        output2 = self.ff1_2(x)  # enlarge to 128
+        output2 = torch.relu(output2)
+        output2 = self.ff2_2(output2)  # join them back to 64
+
+        x = x + output2  # ← merge back into main flow
+        x = self.norm4(x)
+
+        # ===== OUTPUT =====
+        # output_head only runs ONCE at the very end, converts 64 dims -> 65 (one score per character)
         x = self.output_head(x)
         return x
 
