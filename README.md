@@ -279,7 +279,7 @@ Hardware
 - The generate function is embarrassingly simple — run the model, sample a character, shift the window, repeat
 - `torch.save(model.state_dict())` saves just the learned weights, not the model code — you need the class definition to load them back
 
----
+---------------------------------------
 
 ## Blogs
 
