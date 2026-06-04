@@ -178,7 +178,7 @@ def reverse_mapping():
 #
 def tokenise_local():
     global tokenised_text
-    with open("input.txt", "r") as i:
+    with open("TinyStories-train.txt", "r") as i:
         while True:
             char = i.read(1)
             if not char:
