@@ -173,6 +173,9 @@ def reverse_mapping():
     reverse_map = {v: k for k, v in forward_map.items()}
 
 
+# the accuracy is not that good the text is still not english at all so we need to change the data to something that is
+# more simpler form of english hence i am gonna use this --https://huggingface.co/datasets/roneneldan/TinyStories
+#
 def tokenise_local():
     global tokenised_text
     with open("input.txt", "r") as i:
