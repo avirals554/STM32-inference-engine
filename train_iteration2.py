@@ -6,6 +6,7 @@
 # the accuracy was not good in iteration1 because the text (shakespeare) was too complex english, so now we are using TinyStories
 # which is much simpler english written for small kids -- https://huggingface.co/datasets/roneneldan/TinyStories
 
+
 import torch
 import torch.nn as nn
 
@@ -21,6 +22,8 @@ import torch.nn as nn
 # ff_dim         -- the feed-forward expansion. we enlarge to this then shrink back. 128->256->128 here
 # learning_rate  -- learning rate for Adam optimizer (same as iteration1)
 # training_steps -- number of training iterations (same as iteration1)
+# btw the vocab size for the tiny stories data set is like 92 words for the embeddings table
+#
 context_length = 64  # sequence length (chars per training example), NOT vocab size
 embed_dim = 128
 num_heads = 2
@@ -46,6 +49,8 @@ with open("TinyStories-valid.txt", "r", encoding="utf-8") as f:
 chars = sorted(list(set(text)))
 # number of unique characters -- NOT hardcoded to 65 like iteration1, computed from the file (=98 here)
 vocab_size = len(chars)
+
+
 # char -> id
 forward_map = {c: i for i, c in enumerate(chars)}
 # id -> char (used in generate() to turn predictions back into text)
