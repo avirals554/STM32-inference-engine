@@ -1,0 +1,675 @@
+Archive member included to satisfy reference by file (symbol)
+
+/Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-wf_exp.o)
+                              src/model.o (expf)
+/Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-wf_sqrt.o)
+                              src/model.o (sqrtf)
+/Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-sf_finite.o)
+                              /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-wf_exp.o) (finitef)
+/Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-ef_exp.o)
+                              /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-wf_exp.o) (__ieee754_expf)
+/Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-ef_sqrt.o)
+                              /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-wf_sqrt.o) (__ieee754_sqrtf)
+/Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-math_errf.o)
+                              /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-ef_exp.o) (__math_uflowf)
+/Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memcmp.o)
+                              src/tokenizer.o (memcmp)
+/Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memmove.o)
+                              src/oled.o (memmove)
+/Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memset.o)
+                              src/oled.o (memset)
+/Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-errno.o)
+                              /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-wf_exp.o) (__errno)
+/Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-impure.o)
+                              /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-errno.o) (_impure_ptr)
+/Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memcpy-stub.o)
+                              src/main.o (memcpy)
+/Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-strlen.o)
+                              src/tokenizer.o (strlen)
+
+Discarded input sections
+
+ .text          0x00000000        0x0 src/startup.o
+ .data          0x00000000        0x0 src/startup.o
+ .bss           0x00000000        0x0 src/startup.o
+ .text._sbrk    0x00000000        0x6 src/startup.o
+ .text._exit    0x00000000        0x2 src/startup.o
+ .text._write   0x00000000        0x4 src/startup.o
+ .text._read    0x00000000        0x4 src/startup.o
+ .text._close   0x00000000        0x6 src/startup.o
+ .text._lseek   0x00000000        0x4 src/startup.o
+ .text._fstat   0x00000000        0x4 src/startup.o
+ .text._isatty  0x00000000        0x4 src/startup.o
+ .text._getpid  0x00000000        0x4 src/startup.o
+ .text._kill    0x00000000        0x6 src/startup.o
+ .ARM.attributes
+                0x00000000       0x34 src/startup.o
+ .text          0x00000000        0x0 src/uart.o
+ .data          0x00000000        0x0 src/uart.o
+ .bss           0x00000000        0x0 src/uart.o
+ .text.uart_write
+                0x00000000       0x16 src/uart.o
+ .ARM.attributes
+                0x00000000       0x34 src/uart.o
+ .text          0x00000000        0x0 src/i2c.o
+ .data          0x00000000        0x0 src/i2c.o
+ .bss           0x00000000        0x0 src/i2c.o
+ .ARM.attributes
+                0x00000000       0x34 src/i2c.o
+ .text          0x00000000        0x0 src/oled.o
+ .data          0x00000000        0x0 src/oled.o
+ .bss           0x00000000        0x0 src/oled.o
+ .ARM.attributes
+                0x00000000       0x34 src/oled.o
+ .text          0x00000000        0x0 src/main.o
+ .data          0x00000000        0x0 src/main.o
+ .bss           0x00000000        0x0 src/main.o
+ .ARM.attributes
+                0x00000000       0x34 src/main.o
+ .text          0x00000000        0x0 src/model.o
+ .data          0x00000000        0x0 src/model.o
+ .bss           0x00000000        0x0 src/model.o
+ .rodata.s_output_head
+                0x00000000        0x4 src/model.o
+ .rodata.s_l1_ff2
+                0x00000000        0x4 src/model.o
+ .rodata.s_l1_ff1
+                0x00000000        0x4 src/model.o
+ .rodata.s_l1_o
+                0x00000000        0x4 src/model.o
+ .rodata.s_l1_v
+                0x00000000        0x4 src/model.o
+ .rodata.s_l1_k
+                0x00000000        0x4 src/model.o
+ .rodata.s_l1_q
+                0x00000000        0x4 src/model.o
+ .rodata.s_l0_ff2
+                0x00000000        0x4 src/model.o
+ .rodata.s_l0_ff1
+                0x00000000        0x4 src/model.o
+ .rodata.s_l0_o
+                0x00000000        0x4 src/model.o
+ .rodata.s_l0_v
+                0x00000000        0x4 src/model.o
+ .rodata.s_l0_k
+                0x00000000        0x4 src/model.o
+ .rodata.s_l0_q
+                0x00000000        0x4 src/model.o
+ .rodata.s_pos_embedding
+                0x00000000        0x4 src/model.o
+ .rodata.s_char_embedding
+                0x00000000        0x4 src/model.o
+ .ARM.attributes
+                0x00000000       0x34 src/model.o
+ .text          0x00000000        0x0 src/tokenizer.o
+ .data          0x00000000        0x0 src/tokenizer.o
+ .bss           0x00000000        0x0 src/tokenizer.o
+ .ARM.attributes
+                0x00000000       0x34 src/tokenizer.o
+ .text          0x00000000        0x0 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-wf_exp.o)
+ .data          0x00000000        0x0 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-wf_exp.o)
+ .bss           0x00000000        0x0 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-wf_exp.o)
+ .ARM.attributes
+                0x00000000       0x34 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-wf_exp.o)
+ .text          0x00000000        0x0 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-wf_sqrt.o)
+ .data          0x00000000        0x0 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-wf_sqrt.o)
+ .bss           0x00000000        0x0 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-wf_sqrt.o)
+ .ARM.attributes
+                0x00000000       0x34 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-wf_sqrt.o)
+ .text          0x00000000        0x0 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-sf_finite.o)
+ .data          0x00000000        0x0 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-sf_finite.o)
+ .bss           0x00000000        0x0 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-sf_finite.o)
+ .ARM.attributes
+                0x00000000       0x34 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-sf_finite.o)
+ .text          0x00000000        0x0 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-ef_exp.o)
+ .data          0x00000000        0x0 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-ef_exp.o)
+ .bss           0x00000000        0x0 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-ef_exp.o)
+ .ARM.attributes
+                0x00000000       0x34 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-ef_exp.o)
+ .text          0x00000000        0x0 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-ef_sqrt.o)
+ .data          0x00000000        0x0 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-ef_sqrt.o)
+ .bss           0x00000000        0x0 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-ef_sqrt.o)
+ .ARM.attributes
+                0x00000000       0x34 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-ef_sqrt.o)
+ .text          0x00000000        0x0 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-math_errf.o)
+ .data          0x00000000        0x0 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-math_errf.o)
+ .bss           0x00000000        0x0 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-math_errf.o)
+ .text.__math_divzerof
+                0x00000000       0x24 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-math_errf.o)
+ .text.__math_invalidf
+                0x00000000       0x20 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-math_errf.o)
+ .ARM.attributes
+                0x00000000       0x34 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-math_errf.o)
+ .text          0x00000000        0x0 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memcmp.o)
+ .data          0x00000000        0x0 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memcmp.o)
+ .bss           0x00000000        0x0 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memcmp.o)
+ .ARM.attributes
+                0x00000000       0x34 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memcmp.o)
+ .text          0x00000000        0x0 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memmove.o)
+ .data          0x00000000        0x0 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memmove.o)
+ .bss           0x00000000        0x0 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memmove.o)
+ .ARM.attributes
+                0x00000000       0x34 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memmove.o)
+ .text          0x00000000        0x0 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memset.o)
+ .data          0x00000000        0x0 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memset.o)
+ .bss           0x00000000        0x0 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memset.o)
+ .ARM.attributes
+                0x00000000       0x34 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memset.o)
+ .text          0x00000000        0x0 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-errno.o)
+ .data          0x00000000        0x0 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-errno.o)
+ .bss           0x00000000        0x0 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-errno.o)
+ .ARM.attributes
+                0x00000000       0x34 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-errno.o)
+ .text          0x00000000        0x0 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-impure.o)
+ .data          0x00000000        0x0 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-impure.o)
+ .bss           0x00000000        0x0 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-impure.o)
+ .ARM.attributes
+                0x00000000       0x34 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-impure.o)
+ .text          0x00000000        0x0 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memcpy-stub.o)
+ .data          0x00000000        0x0 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memcpy-stub.o)
+ .bss           0x00000000        0x0 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memcpy-stub.o)
+ .ARM.attributes
+                0x00000000       0x34 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memcpy-stub.o)
+ .data          0x00000000        0x0 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-strlen.o)
+ .bss           0x00000000        0x0 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-strlen.o)
+ .ARM.extab     0x00000000        0x0 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-strlen.o)
+ .ARM.attributes
+                0x00000000       0x17 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-strlen.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+FLASH            0x08000000         0x00080000         xr
+RAM              0x20000000         0x00020000         xrw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD src/startup.o
+LOAD src/uart.o
+LOAD src/i2c.o
+LOAD src/oled.o
+LOAD src/main.o
+LOAD src/model.o
+LOAD src/tokenizer.o
+LOAD /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a
+START GROUP
+LOAD /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/libgcc.a
+LOAD /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a
+END GROUP
+START GROUP
+LOAD /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/libgcc.a
+LOAD /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a
+LOAD /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a
+END GROUP
+START GROUP
+LOAD /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/libgcc.a
+LOAD /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a
+LOAD /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libnosys.a
+END GROUP
+                0x20020000                        _estack = (ORIGIN (RAM) + LENGTH (RAM))
+
+.isr_vector     0x08000000       0x40
+ *(.isr_vector)
+ .isr_vector    0x08000000       0x40 src/startup.o
+                0x08000000                vector_table
+
+.text           0x08000040    0x4c5f8
+ *(.text*)
+ .text.Default_Handler
+                0x08000040        0x2 src/startup.o
+ *fill*         0x08000042        0x2 
+ .text.Reset_Handler
+                0x08000044       0xbc src/startup.o
+                0x08000044                Reset_Handler
+ .text.uart_init
+                0x08000100       0x60 src/uart.o
+                0x08000100                uart_init
+ .text.uart_putc
+                0x08000160       0x10 src/uart.o
+                0x08000160                uart_putc
+ .text.uart_puts
+                0x08000170       0x12 src/uart.o
+                0x08000170                uart_puts
+ *fill*         0x08000182        0x2 
+ .text.uart_getc
+                0x08000184       0x14 src/uart.o
+                0x08000184                uart_getc
+ .text.wait_sr1
+                0x08000198       0x30 src/i2c.o
+ .text.i2c1_init
+                0x080001c8       0x98 src/i2c.o
+                0x080001c8                i2c1_init
+ .text.i2c1_write2
+                0x08000260       0xa8 src/i2c.o
+                0x08000260                i2c1_write2
+ .text.i2c1_write
+                0x08000308        0xe src/i2c.o
+                0x08000308                i2c1_write
+ .text.cmd      0x08000316       0x1a src/oled.o
+ .text.flush_pages
+                0x08000330       0x50 src/oled.o
+ .text.oled_clear
+                0x08000380       0x30 src/oled.o
+                0x08000380                oled_clear
+ .text.oled_init
+                0x080003b0       0x2c src/oled.o
+                0x080003b0                oled_init
+ .text.oled_putc
+                0x080003dc       0xbc src/oled.o
+                0x080003dc                oled_putc
+ .text.oled_puts
+                0x08000498       0x12 src/oled.o
+                0x08000498                oled_puts
+ *fill*         0x080004aa        0x2 
+ .text.load_context
+                0x080004ac       0x3c src/main.o
+ .text.run_generation
+                0x080004e8       0x9c src/main.o
+ .text.startup.main
+                0x08000584       0x98 src/main.o
+                0x08000584                main
+ .text.dot_x_int8
+                0x0800061c       0x28 src/model.o
+ .text.linear   0x08000644       0x36 src/model.o
+ *fill*         0x0800067a        0x2 
+ .text.layernorm_row
+                0x0800067c       0x88 src/model.o
+ .text.run_layer
+                0x08000704      0x2f4 src/model.o
+ .text.model_forward
+                0x080009f8      0x1fc src/model.o
+                0x080009f8                model_forward
+ .text.model_argmax
+                0x08000bf4       0x26 src/model.o
+                0x08000bf4                model_argmax
+ *fill*         0x08000c1a        0x2 
+ .text.tokenize
+                0x08000c1c       0xb8 src/tokenizer.o
+                0x08000c1c                tokenize
+ .text.detokenize_one
+                0x08000cd4       0x44 src/tokenizer.o
+                0x08000cd4                detokenize_one
+ .text.expf     0x08000d18       0x78 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-wf_exp.o)
+                0x08000d18                expf
+ .text.sqrtf    0x08000d90       0x50 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-wf_sqrt.o)
+                0x08000d90                sqrtf
+ .text.finitef  0x08000de0       0x14 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-sf_finite.o)
+                0x08000de0                finitef
+ .text.__ieee754_expf
+                0x08000df4      0x1e8 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-ef_exp.o)
+                0x08000df4                __ieee754_expf
+ .text.__ieee754_sqrtf
+                0x08000fdc        0x8 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-ef_sqrt.o)
+                0x08000fdc                __ieee754_sqrtf
+ .text.with_errnof
+                0x08000fe4       0x18 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-math_errf.o)
+ .text.xflowf   0x08000ffc       0x20 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-math_errf.o)
+ .text.__math_uflowf
+                0x0800101c        0xc /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-math_errf.o)
+                0x0800101c                __math_uflowf
+ .text.__math_oflowf
+                0x08001028        0xc /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-math_errf.o)
+                0x08001028                __math_oflowf
+ .text.memcmp   0x08001034       0x20 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memcmp.o)
+                0x08001034                memcmp
+ .text.memmove  0x08001054       0x32 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memmove.o)
+                0x08001054                memmove
+ .text.memset   0x08001086       0x10 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memset.o)
+                0x08001086                memset
+ *fill*         0x08001096        0x2 
+ .text.__errno  0x08001098        0xc /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-errno.o)
+                0x08001098                __errno
+ .text.memcpy   0x080010a4       0x1c /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memcpy-stub.o)
+                0x080010a4                memcpy
+ .text          0x080010c0       0x10 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-strlen.o)
+                0x080010c0                strlen
+ *(.rodata*)
+ .rodata.data_ctrl.0
+                0x080010d0        0x1 src/oled.o
+ .rodata.OLED_INIT_SEQ
+                0x080010d1       0x19 src/oled.o
+ .rodata.font5x7
+                0x080010ea      0x1db src/oled.o
+ .rodata.run_generation.str1.1
+                0x080012c5      0x175 src/main.o
+                                  0x6 (size before relaxing)
+ .rodata.main.str1.1
+                0x0800143a        0x0 src/main.o
+                                 0x9b (size before relaxing)
+ *fill*         0x0800143a        0x2 
+ .rodata.b_output_head
+                0x0800143c      0x188 src/model.o
+                0x0800143c                b_output_head
+ .rodata.w_output_head
+                0x080015c4     0x3100 src/model.o
+                0x080015c4                w_output_head
+ .rodata.ln_l1_n2_beta
+                0x080046c4      0x200 src/model.o
+                0x080046c4                ln_l1_n2_beta
+ .rodata.ln_l1_n2_gamma
+                0x080048c4      0x200 src/model.o
+                0x080048c4                ln_l1_n2_gamma
+ .rodata.ln_l1_n1_beta
+                0x08004ac4      0x200 src/model.o
+                0x08004ac4                ln_l1_n1_beta
+ .rodata.ln_l1_n1_gamma
+                0x08004cc4      0x200 src/model.o
+                0x08004cc4                ln_l1_n1_gamma
+ .rodata.b_l1_ff2
+                0x08004ec4      0x200 src/model.o
+                0x08004ec4                b_l1_ff2
+ .rodata.w_l1_ff2
+                0x080050c4     0x8000 src/model.o
+                0x080050c4                w_l1_ff2
+ .rodata.b_l1_ff1
+                0x0800d0c4      0x400 src/model.o
+                0x0800d0c4                b_l1_ff1
+ .rodata.w_l1_ff1
+                0x0800d4c4     0x8000 src/model.o
+                0x0800d4c4                w_l1_ff1
+ .rodata.b_l1_o
+                0x080154c4      0x200 src/model.o
+                0x080154c4                b_l1_o
+ .rodata.w_l1_o
+                0x080156c4     0x4000 src/model.o
+                0x080156c4                w_l1_o
+ .rodata.b_l1_v
+                0x080196c4      0x200 src/model.o
+                0x080196c4                b_l1_v
+ .rodata.w_l1_v
+                0x080198c4     0x4000 src/model.o
+                0x080198c4                w_l1_v
+ .rodata.b_l1_k
+                0x0801d8c4      0x200 src/model.o
+                0x0801d8c4                b_l1_k
+ .rodata.w_l1_k
+                0x0801dac4     0x4000 src/model.o
+                0x0801dac4                w_l1_k
+ .rodata.b_l1_q
+                0x08021ac4      0x200 src/model.o
+                0x08021ac4                b_l1_q
+ .rodata.w_l1_q
+                0x08021cc4     0x4000 src/model.o
+                0x08021cc4                w_l1_q
+ .rodata.ln_l0_n2_beta
+                0x08025cc4      0x200 src/model.o
+                0x08025cc4                ln_l0_n2_beta
+ .rodata.ln_l0_n2_gamma
+                0x08025ec4      0x200 src/model.o
+                0x08025ec4                ln_l0_n2_gamma
+ .rodata.ln_l0_n1_beta
+                0x080260c4      0x200 src/model.o
+                0x080260c4                ln_l0_n1_beta
+ .rodata.ln_l0_n1_gamma
+                0x080262c4      0x200 src/model.o
+                0x080262c4                ln_l0_n1_gamma
+ .rodata.b_l0_ff2
+                0x080264c4      0x200 src/model.o
+                0x080264c4                b_l0_ff2
+ .rodata.w_l0_ff2
+                0x080266c4     0x8000 src/model.o
+                0x080266c4                w_l0_ff2
+ .rodata.b_l0_ff1
+                0x0802e6c4      0x400 src/model.o
+                0x0802e6c4                b_l0_ff1
+ .rodata.w_l0_ff1
+                0x0802eac4     0x8000 src/model.o
+                0x0802eac4                w_l0_ff1
+ .rodata.b_l0_o
+                0x08036ac4      0x200 src/model.o
+                0x08036ac4                b_l0_o
+ .rodata.w_l0_o
+                0x08036cc4     0x4000 src/model.o
+                0x08036cc4                w_l0_o
+ .rodata.b_l0_v
+                0x0803acc4      0x200 src/model.o
+                0x0803acc4                b_l0_v
+ .rodata.w_l0_v
+                0x0803aec4     0x4000 src/model.o
+                0x0803aec4                w_l0_v
+ .rodata.b_l0_k
+                0x0803eec4      0x200 src/model.o
+                0x0803eec4                b_l0_k
+ .rodata.w_l0_k
+                0x0803f0c4     0x4000 src/model.o
+                0x0803f0c4                w_l0_k
+ .rodata.b_l0_q
+                0x080430c4      0x200 src/model.o
+                0x080430c4                b_l0_q
+ .rodata.w_l0_q
+                0x080432c4     0x4000 src/model.o
+                0x080432c4                w_l0_q
+ .rodata.w_pos_embedding
+                0x080472c4     0x2000 src/model.o
+                0x080472c4                w_pos_embedding
+ .rodata.w_char_embedding
+                0x080492c4     0x3100 src/model.o
+                0x080492c4                w_char_embedding
+ .rodata.detokenize_one.str1.1
+                0x0804c3c4        0x0 src/tokenizer.o
+                                  0x2 (size before relaxing)
+ .rodata.str1.1
+                0x0804c3c4        0x0 src/tokenizer.o
+                                 0xdb (size before relaxing)
+ .rodata.id_to_utf8
+                0x0804c3c4      0x188 src/tokenizer.o
+                0x0804c3c4                id_to_utf8
+ .rodata.multi_byte_table
+                0x0804c54c       0x54 src/tokenizer.o
+                0x0804c54c                multi_byte_table
+ .rodata.ascii_to_id
+                0x0804c5a0       0x80 src/tokenizer.o
+                0x0804c5a0                ascii_to_id
+ .rodata.ln2LO  0x0804c620        0x8 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-ef_exp.o)
+ .rodata.ln2HI  0x0804c628        0x8 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-ef_exp.o)
+ .rodata.halF   0x0804c630        0x8 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-ef_exp.o)
+ *(.glue_7)
+ .glue_7        0x0804c638        0x0 linker stubs
+ *(.glue_7t)
+ .glue_7t       0x0804c638        0x0 linker stubs
+ *(.init)
+ *(.fini)
+                0x0804c638                        . = ALIGN (0x4)
+                0x0804c638                        _etext = .
+
+.vfp11_veneer   0x0804c638        0x0
+ .vfp11_veneer  0x0804c638        0x0 linker stubs
+
+.v4_bx          0x0804c638        0x0
+ .v4_bx         0x0804c638        0x0 linker stubs
+
+.iplt           0x0804c638        0x0
+ .iplt          0x0804c638        0x0 src/startup.o
+
+.ARM.extab
+ *(.ARM.extab* .gnu.linkonce.armextab.*)
+
+.ARM            0x0804c638        0x8
+ *(.ARM.exidx*)
+ .ARM.exidx     0x0804c638        0x8 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-strlen.o)
+                0x0804c640                        _sidata = LOADADDR (.data)
+
+.rel.dyn        0x0804c640        0x0
+ .rel.iplt      0x0804c640        0x0 src/startup.o
+
+.data           0x20000000       0x50 load address 0x0804c640
+                0x20000000                        . = ALIGN (0x4)
+                0x20000000                        _sdata = .
+ *(.data*)
+ .data._impure_ptr
+                0x20000000        0x4 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-impure.o)
+                0x20000000                _impure_ptr
+ .data._impure_data
+                0x20000004       0x4c /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-impure.o)
+                0x20000004                _impure_data
+                0x20000050                        . = ALIGN (0x4)
+                0x20000050                        _edata = .
+
+.igot.plt       0x20000050        0x0 load address 0x0804c690
+ .igot.plt      0x20000050        0x0 src/startup.o
+
+.bss            0x20000050    0x186d0 load address 0x0804c690
+                0x20000050                        . = ALIGN (0x4)
+                0x20000050                        _sbss = .
+ *(.bss*)
+ .bss.cursor_col
+                0x20000050        0x4 src/oled.o
+ .bss.cursor_row
+                0x20000054        0x4 src/oled.o
+ .bss.fb        0x20000058      0x400 src/oled.o
+ .bss.seed      0x20000458      0x100 src/main.o
+ .bss.logits    0x20000558      0x188 src/main.o
+ .bss.ctx       0x200006e0       0x40 src/main.o
+ .bss.v_h       0x20000720     0x4000 src/model.o
+ .bss.k_h       0x20004720     0x4000 src/model.o
+ .bss.scratch   0x20008720     0x8000 src/model.o
+ .bss.x         0x20010720     0x8000 src/model.o
+ *(COMMON)
+                0x20018720                        . = ALIGN (0x4)
+                0x20018720                        _ebss = .
+
+._check_stack   0x20018720      0x800 load address 0x0804c690
+                0x20018720                        . = ALIGN (0x8)
+                0x20018f20                        . = (. + 0x800)
+ *fill*         0x20018720      0x800 
+
+/DISCARD/
+ *(.ARM.attributes)
+OUTPUT(inference.elf elf32-littlearm)
+LOAD linker stubs
+
+.debug_info     0x00000000     0x2c35
+ .debug_info    0x00000000      0x3ba src/startup.o
+ .debug_info    0x000003ba      0x1c0 src/uart.o
+ .debug_info    0x0000057a      0x373 src/i2c.o
+ .debug_info    0x000008ed      0x5a7 src/oled.o
+ .debug_info    0x00000e94      0x6ac src/main.o
+ .debug_info    0x00001540     0x12f8 src/model.o
+ .debug_info    0x00002838      0x3fd src/tokenizer.o
+
+.debug_abbrev   0x00000000      0xd80
+ .debug_abbrev  0x00000000      0x19e src/startup.o
+ .debug_abbrev  0x0000019e      0x10c src/uart.o
+ .debug_abbrev  0x000002aa      0x1ae src/i2c.o
+ .debug_abbrev  0x00000458      0x25d src/oled.o
+ .debug_abbrev  0x000006b5      0x228 src/main.o
+ .debug_abbrev  0x000008dd      0x2d1 src/model.o
+ .debug_abbrev  0x00000bae      0x1d2 src/tokenizer.o
+
+.debug_loclists
+                0x00000000     0x14a7
+ .debug_loclists
+                0x00000000      0x16c src/startup.o
+ .debug_loclists
+                0x0000016c       0xcd src/uart.o
+ .debug_loclists
+                0x00000239      0x351 src/i2c.o
+ .debug_loclists
+                0x0000058a      0x1b6 src/oled.o
+ .debug_loclists
+                0x00000740      0x17c src/main.o
+ .debug_loclists
+                0x000008bc      0x9da src/model.o
+ .debug_loclists
+                0x00001296      0x211 src/tokenizer.o
+
+.debug_aranges  0x00000000      0x1d8
+ .debug_aranges
+                0x00000000       0x78 src/startup.o
+ .debug_aranges
+                0x00000078       0x40 src/uart.o
+ .debug_aranges
+                0x000000b8       0x38 src/i2c.o
+ .debug_aranges
+                0x000000f0       0x48 src/oled.o
+ .debug_aranges
+                0x00000138       0x30 src/main.o
+ .debug_aranges
+                0x00000168       0x48 src/model.o
+ .debug_aranges
+                0x000001b0       0x28 src/tokenizer.o
+
+.debug_rnglists
+                0x00000000      0x45d
+ .debug_rnglists
+                0x00000000       0x72 src/startup.o
+ .debug_rnglists
+                0x00000072       0x3a src/uart.o
+ .debug_rnglists
+                0x000000ac       0x6c src/i2c.o
+ .debug_rnglists
+                0x00000118       0x50 src/oled.o
+ .debug_rnglists
+                0x00000168       0x82 src/main.o
+ .debug_rnglists
+                0x000001ea      0x206 src/model.o
+ .debug_rnglists
+                0x000003f0       0x6d src/tokenizer.o
+
+.debug_line     0x00000000     0x1e75
+ .debug_line    0x00000000      0x385 src/startup.o
+ .debug_line    0x00000385      0x2e8 src/uart.o
+ .debug_line    0x0000066d      0x3e3 src/i2c.o
+ .debug_line    0x00000a50      0x43d src/oled.o
+ .debug_line    0x00000e8d      0x3e2 src/main.o
+ .debug_line    0x0000126f      0x86b src/model.o
+ .debug_line    0x00001ada      0x39b src/tokenizer.o
+
+.debug_str      0x00000000      0x7ba
+ .debug_str     0x00000000      0x7ba src/startup.o
+                                0x24d (size before relaxing)
+ .debug_str     0x000007ba        0x0 src/uart.o
+                                0x1f4 (size before relaxing)
+ .debug_str     0x000007ba        0x0 src/i2c.o
+                                0x20c (size before relaxing)
+ .debug_str     0x000007ba        0x0 src/oled.o
+                                0x28b (size before relaxing)
+ .debug_str     0x000007ba        0x0 src/main.o
+                                0x2cf (size before relaxing)
+ .debug_str     0x000007ba        0x0 src/model.o
+                                0x4e8 (size before relaxing)
+ .debug_str     0x000007ba        0x0 src/tokenizer.o
+                                0x243 (size before relaxing)
+
+.comment        0x00000000       0x45
+ .comment       0x00000000       0x45 src/startup.o
+                                 0x46 (size before relaxing)
+ .comment       0x00000045        0x0 src/uart.o
+                                 0x46 (size before relaxing)
+ .comment       0x00000045        0x0 src/i2c.o
+                                 0x46 (size before relaxing)
+ .comment       0x00000045        0x0 src/oled.o
+                                 0x46 (size before relaxing)
+ .comment       0x00000045        0x0 src/main.o
+                                 0x46 (size before relaxing)
+ .comment       0x00000045        0x0 src/model.o
+                                 0x46 (size before relaxing)
+ .comment       0x00000045        0x0 src/tokenizer.o
+                                 0x46 (size before relaxing)
+
+.debug_frame    0x00000000      0x6a4
+ .debug_frame   0x00000000       0xd8 src/startup.o
+ .debug_frame   0x000000d8       0x70 src/uart.o
+ .debug_frame   0x00000148       0x68 src/i2c.o
+ .debug_frame   0x000001b0       0xc8 src/oled.o
+ .debug_frame   0x00000278       0x74 src/main.o
+ .debug_frame   0x000002ec      0x118 src/model.o
+ .debug_frame   0x00000404       0x5c src/tokenizer.o
+ .debug_frame   0x00000460       0x44 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-wf_exp.o)
+ .debug_frame   0x000004a4       0x48 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-wf_sqrt.o)
+ .debug_frame   0x000004ec       0x20 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-sf_finite.o)
+ .debug_frame   0x0000050c       0x20 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-ef_exp.o)
+ .debug_frame   0x0000052c       0x20 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-ef_sqrt.o)
+ .debug_frame   0x0000054c       0x80 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-math_errf.o)
+ .debug_frame   0x000005cc       0x28 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memcmp.o)
+ .debug_frame   0x000005f4       0x28 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memmove.o)
+ .debug_frame   0x0000061c       0x20 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memset.o)
+ .debug_frame   0x0000063c       0x20 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-errno.o)
+ .debug_frame   0x0000065c       0x28 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memcpy-stub.o)
+ .debug_frame   0x00000684       0x20 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-strlen.o)
+
+.debug_line_str
+                0x00000000       0xf4
+ .debug_line_str
+                0x00000000       0xf4 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-strlen.o)
