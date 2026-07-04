@@ -1,7 +1,10 @@
 # How to run after you git pull from this code -
-st-flash --reset write inference.bin 0x08000000
+cd code_flash_stm32_1st_iteration/firmware 
+make flash 
 
 we are essentially flashing the .bin file at the address 0x0800000 and i have also speicified the adresses of all the data that are used in this code in the code flash stm 32 folder if you want to change the architecture and use another memory location you can do it too .
+i am using a regular build system to first connect the necessary stuff via first converting it into .elf file and then converting it into pure binary called inference.bin file and flashing that to that memory adress .
+
 
 # STM32-inference-engine
 
