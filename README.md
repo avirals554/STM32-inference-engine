@@ -1,3 +1,8 @@
+# How to run after you git pull from this code -
+st-flash --reset write inference.bin 0x08000000
+
+we are essentially flashing the .bin file at the address 0x0800000 and i have also speicified the adresses of all the data that are used in this code in the code flash stm 32 folder if you want to change the architecture and use another memory location you can do it too .
+
 # STM32-inference-engine
 
 A character-level language model trained on a laptop, then running inference
