@@ -28,7 +28,7 @@ The 96 KB of activation buffers are exactly what the arithmetic requires:
 ## Layout
 
 ```
-claude-1st-iteration/
+microcontroller-1st-iteration/
 ├── model_weights_2.pth              (copied from the repo root)
 ├── tools/
 │   ├── quantize.py                  fp32 .pth  ->  int8 C headers
@@ -55,7 +55,7 @@ and the host-side smoke test, so any bug reproduces on the dev machine.
 ### 1. Regenerate weight headers (only after retraining)
 
 ```
-cd claude-1st-iteration
+cd microcontroller-1st-iteration
 python3 tools/quantize.py
 ```
 

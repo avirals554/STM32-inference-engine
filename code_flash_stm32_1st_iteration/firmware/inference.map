@@ -214,7 +214,7 @@ END GROUP
  .isr_vector    0x08000000       0x40 src/startup.o
                 0x08000000                vector_table
 
-.text           0x08000040    0x4c5f8
+.text           0x08000040    0x4c608
  *(.text*)
  .text.Default_Handler
                 0x08000040        0x2 src/startup.o
@@ -332,168 +332,168 @@ END GROUP
  .rodata.font5x7
                 0x080010ea      0x1db src/oled.o
  .rodata.run_generation.str1.1
-                0x080012c5      0x175 src/main.o
+                0x080012c5      0x186 src/main.o
                                   0x6 (size before relaxing)
  .rodata.main.str1.1
-                0x0800143a        0x0 src/main.o
-                                 0x9b (size before relaxing)
- *fill*         0x0800143a        0x2 
+                0x0800144b        0x0 src/main.o
+                                 0xac (size before relaxing)
+ *fill*         0x0800144b        0x1 
  .rodata.b_output_head
-                0x0800143c      0x188 src/model.o
-                0x0800143c                b_output_head
+                0x0800144c      0x188 src/model.o
+                0x0800144c                b_output_head
  .rodata.w_output_head
-                0x080015c4     0x3100 src/model.o
-                0x080015c4                w_output_head
+                0x080015d4     0x3100 src/model.o
+                0x080015d4                w_output_head
  .rodata.ln_l1_n2_beta
-                0x080046c4      0x200 src/model.o
-                0x080046c4                ln_l1_n2_beta
+                0x080046d4      0x200 src/model.o
+                0x080046d4                ln_l1_n2_beta
  .rodata.ln_l1_n2_gamma
-                0x080048c4      0x200 src/model.o
-                0x080048c4                ln_l1_n2_gamma
+                0x080048d4      0x200 src/model.o
+                0x080048d4                ln_l1_n2_gamma
  .rodata.ln_l1_n1_beta
-                0x08004ac4      0x200 src/model.o
-                0x08004ac4                ln_l1_n1_beta
+                0x08004ad4      0x200 src/model.o
+                0x08004ad4                ln_l1_n1_beta
  .rodata.ln_l1_n1_gamma
-                0x08004cc4      0x200 src/model.o
-                0x08004cc4                ln_l1_n1_gamma
+                0x08004cd4      0x200 src/model.o
+                0x08004cd4                ln_l1_n1_gamma
  .rodata.b_l1_ff2
-                0x08004ec4      0x200 src/model.o
-                0x08004ec4                b_l1_ff2
+                0x08004ed4      0x200 src/model.o
+                0x08004ed4                b_l1_ff2
  .rodata.w_l1_ff2
-                0x080050c4     0x8000 src/model.o
-                0x080050c4                w_l1_ff2
+                0x080050d4     0x8000 src/model.o
+                0x080050d4                w_l1_ff2
  .rodata.b_l1_ff1
-                0x0800d0c4      0x400 src/model.o
-                0x0800d0c4                b_l1_ff1
+                0x0800d0d4      0x400 src/model.o
+                0x0800d0d4                b_l1_ff1
  .rodata.w_l1_ff1
-                0x0800d4c4     0x8000 src/model.o
-                0x0800d4c4                w_l1_ff1
+                0x0800d4d4     0x8000 src/model.o
+                0x0800d4d4                w_l1_ff1
  .rodata.b_l1_o
-                0x080154c4      0x200 src/model.o
-                0x080154c4                b_l1_o
+                0x080154d4      0x200 src/model.o
+                0x080154d4                b_l1_o
  .rodata.w_l1_o
-                0x080156c4     0x4000 src/model.o
-                0x080156c4                w_l1_o
+                0x080156d4     0x4000 src/model.o
+                0x080156d4                w_l1_o
  .rodata.b_l1_v
-                0x080196c4      0x200 src/model.o
-                0x080196c4                b_l1_v
+                0x080196d4      0x200 src/model.o
+                0x080196d4                b_l1_v
  .rodata.w_l1_v
-                0x080198c4     0x4000 src/model.o
-                0x080198c4                w_l1_v
+                0x080198d4     0x4000 src/model.o
+                0x080198d4                w_l1_v
  .rodata.b_l1_k
-                0x0801d8c4      0x200 src/model.o
-                0x0801d8c4                b_l1_k
+                0x0801d8d4      0x200 src/model.o
+                0x0801d8d4                b_l1_k
  .rodata.w_l1_k
-                0x0801dac4     0x4000 src/model.o
-                0x0801dac4                w_l1_k
+                0x0801dad4     0x4000 src/model.o
+                0x0801dad4                w_l1_k
  .rodata.b_l1_q
-                0x08021ac4      0x200 src/model.o
-                0x08021ac4                b_l1_q
+                0x08021ad4      0x200 src/model.o
+                0x08021ad4                b_l1_q
  .rodata.w_l1_q
-                0x08021cc4     0x4000 src/model.o
-                0x08021cc4                w_l1_q
+                0x08021cd4     0x4000 src/model.o
+                0x08021cd4                w_l1_q
  .rodata.ln_l0_n2_beta
-                0x08025cc4      0x200 src/model.o
-                0x08025cc4                ln_l0_n2_beta
+                0x08025cd4      0x200 src/model.o
+                0x08025cd4                ln_l0_n2_beta
  .rodata.ln_l0_n2_gamma
-                0x08025ec4      0x200 src/model.o
-                0x08025ec4                ln_l0_n2_gamma
+                0x08025ed4      0x200 src/model.o
+                0x08025ed4                ln_l0_n2_gamma
  .rodata.ln_l0_n1_beta
-                0x080260c4      0x200 src/model.o
-                0x080260c4                ln_l0_n1_beta
+                0x080260d4      0x200 src/model.o
+                0x080260d4                ln_l0_n1_beta
  .rodata.ln_l0_n1_gamma
-                0x080262c4      0x200 src/model.o
-                0x080262c4                ln_l0_n1_gamma
+                0x080262d4      0x200 src/model.o
+                0x080262d4                ln_l0_n1_gamma
  .rodata.b_l0_ff2
-                0x080264c4      0x200 src/model.o
-                0x080264c4                b_l0_ff2
+                0x080264d4      0x200 src/model.o
+                0x080264d4                b_l0_ff2
  .rodata.w_l0_ff2
-                0x080266c4     0x8000 src/model.o
-                0x080266c4                w_l0_ff2
+                0x080266d4     0x8000 src/model.o
+                0x080266d4                w_l0_ff2
  .rodata.b_l0_ff1
-                0x0802e6c4      0x400 src/model.o
-                0x0802e6c4                b_l0_ff1
+                0x0802e6d4      0x400 src/model.o
+                0x0802e6d4                b_l0_ff1
  .rodata.w_l0_ff1
-                0x0802eac4     0x8000 src/model.o
-                0x0802eac4                w_l0_ff1
+                0x0802ead4     0x8000 src/model.o
+                0x0802ead4                w_l0_ff1
  .rodata.b_l0_o
-                0x08036ac4      0x200 src/model.o
-                0x08036ac4                b_l0_o
+                0x08036ad4      0x200 src/model.o
+                0x08036ad4                b_l0_o
  .rodata.w_l0_o
-                0x08036cc4     0x4000 src/model.o
-                0x08036cc4                w_l0_o
+                0x08036cd4     0x4000 src/model.o
+                0x08036cd4                w_l0_o
  .rodata.b_l0_v
-                0x0803acc4      0x200 src/model.o
-                0x0803acc4                b_l0_v
+                0x0803acd4      0x200 src/model.o
+                0x0803acd4                b_l0_v
  .rodata.w_l0_v
-                0x0803aec4     0x4000 src/model.o
-                0x0803aec4                w_l0_v
+                0x0803aed4     0x4000 src/model.o
+                0x0803aed4                w_l0_v
  .rodata.b_l0_k
-                0x0803eec4      0x200 src/model.o
-                0x0803eec4                b_l0_k
+                0x0803eed4      0x200 src/model.o
+                0x0803eed4                b_l0_k
  .rodata.w_l0_k
-                0x0803f0c4     0x4000 src/model.o
-                0x0803f0c4                w_l0_k
+                0x0803f0d4     0x4000 src/model.o
+                0x0803f0d4                w_l0_k
  .rodata.b_l0_q
-                0x080430c4      0x200 src/model.o
-                0x080430c4                b_l0_q
+                0x080430d4      0x200 src/model.o
+                0x080430d4                b_l0_q
  .rodata.w_l0_q
-                0x080432c4     0x4000 src/model.o
-                0x080432c4                w_l0_q
+                0x080432d4     0x4000 src/model.o
+                0x080432d4                w_l0_q
  .rodata.w_pos_embedding
-                0x080472c4     0x2000 src/model.o
-                0x080472c4                w_pos_embedding
+                0x080472d4     0x2000 src/model.o
+                0x080472d4                w_pos_embedding
  .rodata.w_char_embedding
-                0x080492c4     0x3100 src/model.o
-                0x080492c4                w_char_embedding
+                0x080492d4     0x3100 src/model.o
+                0x080492d4                w_char_embedding
  .rodata.detokenize_one.str1.1
-                0x0804c3c4        0x0 src/tokenizer.o
+                0x0804c3d4        0x0 src/tokenizer.o
                                   0x2 (size before relaxing)
  .rodata.str1.1
-                0x0804c3c4        0x0 src/tokenizer.o
+                0x0804c3d4        0x0 src/tokenizer.o
                                  0xdb (size before relaxing)
  .rodata.id_to_utf8
-                0x0804c3c4      0x188 src/tokenizer.o
-                0x0804c3c4                id_to_utf8
+                0x0804c3d4      0x188 src/tokenizer.o
+                0x0804c3d4                id_to_utf8
  .rodata.multi_byte_table
-                0x0804c54c       0x54 src/tokenizer.o
-                0x0804c54c                multi_byte_table
+                0x0804c55c       0x54 src/tokenizer.o
+                0x0804c55c                multi_byte_table
  .rodata.ascii_to_id
-                0x0804c5a0       0x80 src/tokenizer.o
-                0x0804c5a0                ascii_to_id
- .rodata.ln2LO  0x0804c620        0x8 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-ef_exp.o)
- .rodata.ln2HI  0x0804c628        0x8 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-ef_exp.o)
- .rodata.halF   0x0804c630        0x8 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-ef_exp.o)
+                0x0804c5b0       0x80 src/tokenizer.o
+                0x0804c5b0                ascii_to_id
+ .rodata.ln2LO  0x0804c630        0x8 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-ef_exp.o)
+ .rodata.ln2HI  0x0804c638        0x8 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-ef_exp.o)
+ .rodata.halF   0x0804c640        0x8 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-ef_exp.o)
  *(.glue_7)
- .glue_7        0x0804c638        0x0 linker stubs
+ .glue_7        0x0804c648        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x0804c638        0x0 linker stubs
+ .glue_7t       0x0804c648        0x0 linker stubs
  *(.init)
  *(.fini)
-                0x0804c638                        . = ALIGN (0x4)
-                0x0804c638                        _etext = .
+                0x0804c648                        . = ALIGN (0x4)
+                0x0804c648                        _etext = .
 
-.vfp11_veneer   0x0804c638        0x0
- .vfp11_veneer  0x0804c638        0x0 linker stubs
+.vfp11_veneer   0x0804c648        0x0
+ .vfp11_veneer  0x0804c648        0x0 linker stubs
 
-.v4_bx          0x0804c638        0x0
- .v4_bx         0x0804c638        0x0 linker stubs
+.v4_bx          0x0804c648        0x0
+ .v4_bx         0x0804c648        0x0 linker stubs
 
-.iplt           0x0804c638        0x0
- .iplt          0x0804c638        0x0 src/startup.o
+.iplt           0x0804c648        0x0
+ .iplt          0x0804c648        0x0 src/startup.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
 
-.ARM            0x0804c638        0x8
+.ARM            0x0804c648        0x8
  *(.ARM.exidx*)
- .ARM.exidx     0x0804c638        0x8 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-strlen.o)
-                0x0804c640                        _sidata = LOADADDR (.data)
+ .ARM.exidx     0x0804c648        0x8 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-strlen.o)
+                0x0804c650                        _sidata = LOADADDR (.data)
 
-.rel.dyn        0x0804c640        0x0
- .rel.iplt      0x0804c640        0x0 src/startup.o
+.rel.dyn        0x0804c650        0x0
+ .rel.iplt      0x0804c650        0x0 src/startup.o
 
-.data           0x20000000       0x50 load address 0x0804c640
+.data           0x20000000       0x50 load address 0x0804c650
                 0x20000000                        . = ALIGN (0x4)
                 0x20000000                        _sdata = .
  *(.data*)
@@ -506,10 +506,10 @@ END GROUP
                 0x20000050                        . = ALIGN (0x4)
                 0x20000050                        _edata = .
 
-.igot.plt       0x20000050        0x0 load address 0x0804c690
+.igot.plt       0x20000050        0x0 load address 0x0804c6a0
  .igot.plt      0x20000050        0x0 src/startup.o
 
-.bss            0x20000050    0x186d0 load address 0x0804c690
+.bss            0x20000050    0x186d0 load address 0x0804c6a0
                 0x20000050                        . = ALIGN (0x4)
                 0x20000050                        _sbss = .
  *(.bss*)
@@ -529,7 +529,7 @@ END GROUP
                 0x20018720                        . = ALIGN (0x4)
                 0x20018720                        _ebss = .
 
-._check_stack   0x20018720      0x800 load address 0x0804c690
+._check_stack   0x20018720      0x800 load address 0x0804c6a0
                 0x20018720                        . = ALIGN (0x8)
                 0x20018f20                        . = (. + 0x800)
  *fill*         0x20018720      0x800 
@@ -616,20 +616,20 @@ LOAD linker stubs
  .debug_line    0x0000126f      0x86b src/model.o
  .debug_line    0x00001ada      0x39b src/tokenizer.o
 
-.debug_str      0x00000000      0x7ba
- .debug_str     0x00000000      0x7ba src/startup.o
+.debug_str      0x00000000      0x813
+ .debug_str     0x00000000      0x813 src/startup.o
                                 0x24d (size before relaxing)
- .debug_str     0x000007ba        0x0 src/uart.o
+ .debug_str     0x00000813        0x0 src/uart.o
                                 0x1f4 (size before relaxing)
- .debug_str     0x000007ba        0x0 src/i2c.o
+ .debug_str     0x00000813        0x0 src/i2c.o
                                 0x20c (size before relaxing)
- .debug_str     0x000007ba        0x0 src/oled.o
+ .debug_str     0x00000813        0x0 src/oled.o
                                 0x28b (size before relaxing)
- .debug_str     0x000007ba        0x0 src/main.o
-                                0x2cf (size before relaxing)
- .debug_str     0x000007ba        0x0 src/model.o
-                                0x4e8 (size before relaxing)
- .debug_str     0x000007ba        0x0 src/tokenizer.o
+ .debug_str     0x00000813        0x0 src/main.o
+                                0x2d9 (size before relaxing)
+ .debug_str     0x00000813        0x0 src/model.o
+                                0x4f2 (size before relaxing)
+ .debug_str     0x00000813        0x0 src/tokenizer.o
                                 0x243 (size before relaxing)
 
 .comment        0x00000000       0x45

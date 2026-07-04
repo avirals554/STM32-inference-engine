@@ -189,10 +189,8 @@ static void run_layer(
 
 /* ----- public API ----------------------------------------------------- */
 
-void model_forward(const uint8_t tokens[CONTEXT_LENGTH],
-                   float logits[VOCAB_SIZE]) {
+void model_forward(const uint8_t tokens[CONTEXT_LENGTH], float logits[VOCAB_SIZE]) {
     embed_tokens(tokens);
-
     run_layer(
         (const int8_t *)w_l0_q, s_l0_q, b_l0_q,
         (const int8_t *)w_l0_k, s_l0_k, b_l0_k,
@@ -215,8 +213,7 @@ void model_forward(const uint8_t tokens[CONTEXT_LENGTH],
 
     /* Only the last position matters for next-token prediction. */
     const float *last = &x[(CONTEXT_LENGTH - 1) * EMBED_DIM];
-    linear(last, (const int8_t *)w_output_head, EMBED_DIM, VOCAB_SIZE,
-           s_output_head, b_output_head, logits);
+    linear(last, (const int8_t *)w_output_head, EMBED_DIM, VOCAB_SIZE,  s_output_head, b_output_head, logits);
 }
 
 uint8_t model_argmax(const float logits[VOCAB_SIZE]) {

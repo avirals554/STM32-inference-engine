@@ -60,18 +60,18 @@ static void load_context(const char *text) {
 
 /* Baked-in seed that runs automatically once at boot so you can verify
  * the OLED + inference pipeline without any UART adapter. */
-static const char *BOOT_SEED = "hello my name is ";
+static const char *BOOT_SEED = "there was a big lion in the house ";
 
 static void run_generation(const char *seed_str) {
     load_context(seed_str);
 
     uart_puts(seed_str);
-    uart_puts(" | ");
+    uart_puts(" - ");
 
     /* Screen: fresh page with the seed, then live-append predictions. */
     oled_clear();
     oled_puts(seed_str);
-    oled_puts("|");
+    oled_puts("-");
 
     for (int step = 0; step < GEN_CHARS; step++) {
         model_forward(ctx, logits);
