@@ -90,8 +90,8 @@ static void embed_tokens(const uint8_t tokens[CONTEXT_LENGTH]) {
     /* x[pos] = char_emb[tok] * s_char + pos_emb[pos] * s_pos */
     for (int pos = 0; pos < CONTEXT_LENGTH; pos++) {
         uint8_t tok = tokens[pos];
-        const int8_t *ce = &w_char_embedding[tok][0];
-        const int8_t *pe = &w_pos_embedding[pos][0];
+        const int8_t *ce = w_char_embedding[tok];
+        const int8_t *pe = w_pos_embedding[pos];
         float *dst = &x[pos * EMBED_DIM];
         for (int d = 0; d < EMBED_DIM; d++) {
             dst[d] = (float)ce[d] * s_char_embedding
@@ -190,7 +190,11 @@ static void run_layer(
 /* ----- public API ----------------------------------------------------- */
 
 void model_forward(const uint8_t tokens[CONTEXT_LENGTH], float logits[VOCAB_SIZE]) {
-    embed_tokens(tokens);
+    
+/* this is the changing of the tokens into the actuall embeddings - look definition of the function*/
+  embed_tokens(tokens);
+  /* these are the heads of the training the following are just the 2 heads of the model so we are doing it 
+   * exactly as we did in training */
     run_layer(
         (const int8_t *)w_l0_q, s_l0_q, b_l0_q,
         (const int8_t *)w_l0_k, s_l0_k, b_l0_k,
